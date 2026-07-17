@@ -40,3 +40,32 @@ python src/main.py data/your_file.csv
 This prints a summary report to the terminal and saves plots to `outputs/`.
 
 ## Project structure
+data-mining-dataset-explorer/
+├── data/           # input datasets (not committed)
+├── docs/           # planning docs, notes
+├── outputs/        # generated plots (not committed)
+├── src/
+│   ├── loader.py         # dataset loading
+│   ├── analysis.py       # statistics and dataset checks
+│   ├── visualization.py  # DatasetVisualizer class
+│   ├── cleaning.py       # data cleaning (in progress)
+│   ├── utils.py           # shared helpers
+│   └── main.py             # entry point
+├── tests/          # unit tests
+└── requirements.txt
+## Roadmap
+
+- [x] v1 — Loading and dataset analysis
+- [x] v2 — Visualization
+- [ ] v3 — Automatic data cleaning
+- [ ] v4 — Feature engineering
+- [ ] v5 — Machine learning
+- [ ] v6 — Automatic report generation (PDF/HTML)
+- [ ] v7 — Web interface (FastAPI)
+- [ ] v8 — Deployment
+- [ ] v9 — AI-assisted insights
+
+## Status
+
+This is an ongoing project, built and documented incrementally as part of
+my AI Engineering coursework at ENSIA.

@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 from loader import load_dataset
 from analysis import generate_report
@@ -11,7 +12,7 @@ def print_report(report: dict) -> None:
     print(f"Duplicate rows: {report['duplicate_rows']}")
 
     print("\n Missing values percentage %: ")
-    for col, perc in report['missing_percentage'].items():
+    for col, pct in report['missing_percentage'].items():
         if pct >0:
             print(f" {col}: {pct}%")
     if report['constant_columns']:
@@ -19,7 +20,7 @@ def print_report(report: dict) -> None:
     if report['high_cardinality_columns']:
         print(f"high cardinality columns: {report['high_cardinality_columns']}")
 
-def save_plots(viz: DatasetVizualizer, numeric_columns: list[str], output_dir: Path) -> None:
+def save_plots(viz: DatasetVisualizer, numeric_columns: list[str], output_dir: Path) -> None:
     output_dir.mkdir(exist_ok=True)
     """
     for now this is a minimal version of save_plots function , the full function
@@ -28,7 +29,7 @@ def save_plots(viz: DatasetVizualizer, numeric_columns: list[str], output_dir: P
     """
     if numeric_columns:
         first_col=numeric_columns[0]
-        fig=viz.histogram(first_column)
+        fig=viz.histogram(first_col)
         fig.savefig(output_dir/f"histogram_{first_col}.png")
     if len(numeric_columns) >= 2:
         fig = viz.correlation_heatmap()
@@ -50,9 +51,9 @@ def main():
     report=generate_report(df)
     print_report(report)
 
-    viz=DatasetVisualization(df)
+    viz=DatasetVisualizer(df)
     numeric_columns=df.select_dtypes(include="number").columns.tolist()
-    save_plots(viz, numeric_cols, output_dir=Path("outputs"))
+    save_plots(viz, numeric_columns, output_dir=Path("outputs"))
 
 
 if __name__== "__main__":

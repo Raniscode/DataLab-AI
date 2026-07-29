@@ -1,71 +1,290 @@
-# Data Mining Dataset Explorer "DataLab-AI"
+# DataLab-AI
 
-A Python tool that automates the first stage of any data science workflow:
-understanding a dataset before doing anything else with it.
+### Professional Dataset Exploration & Preprocessing Toolkit
 
-Give it a CSV file. It reports shape, column types, missing values,
-duplicates, and summary statistics, and generates plots — automatically.
+DataLab-AI is a professional Python toolkit that automates the first stages of a Data Science and Machine Learning workflow.
 
-## Why this project exists
+Instead of immediately training models, DataLab-AI helps users understand, visualize, clean, and preprocess their datasets before any machine learning begins.
 
-Before training any machine learning model, you need to understand your
-data: how big it is, what's missing, what's constant or useless, how
-features relate to each other. This project automates that first step,
-the way a data scientist would do it manually before modeling.
+The long-term goal of the project is to evolve into an intelligent data analysis assistant capable of recommending preprocessing techniques, suggesting machine learning models, and automatically generating professional reports.
 
-## Features (current)
+---
 
-- **Loading**: CSV loading with validation (file exists, correct format).
-- **Analysis**: shape, column types, missing values, duplicates, summary
-  statistics, correlation, and more — bundled into a single report via
-  `generate_report()`.
-- **Visualization**: histograms, boxplots, scatter plots, correlation
-  heatmaps, pie charts, and density plots, via the `DatasetVisualizer`
-  class.
+# Why this project exists
 
-## Installation
+In real-world Data Science, the majority of the work happens **before** training a model.
+
+Data scientists first need to:
+
+* Understand the structure of the dataset.
+* Detect missing values.
+* Find duplicate data.
+* Identify useless or constant features.
+* Analyze feature distributions.
+* Explore relationships between variables.
+* Clean inconsistent data.
+* Prepare the dataset for machine learning.
+
+These repetitive tasks are often performed manually.
+
+**DataLab-AI automates this process through a modular, extensible, and production-inspired architecture.**
+
+---
+
+# Current Features
+
+## Dataset Loading
+
+* CSV dataset loading
+* File validation
+* Error handling
+* Safe dataset importing
+
+---
+
+## Dataset Analysis
+
+Analyze a dataset without modifying it.
+
+Current analysis includes:
+
+* Dataset shape
+* Dataset size
+* Column names
+* Data types
+* Missing values
+* Missing value percentages
+* Duplicate rows
+* Summary statistics
+* Memory usage
+* Correlation matrix
+
+---
+
+## Data Visualization
+
+Visualize important dataset characteristics.
+
+Current visualizations include:
+
+* Histograms
+* Scatter plots
+* Box plots
+* Correlation heatmaps
+* Pie charts
+* Distribution plots
+
+---
+
+## Data Preprocessing *(In Progress)*
+
+### Cleaning
+
+* Remove empty rows
+* Remove empty columns
+* Remove duplicate rows
+* Remove constant columns
+* Remove selected rows
+* Remove selected columns
+* Clean string values
+* Optional removal of rows containing missing values
+
+Future preprocessing modules will include:
+
+* Encoding
+* Feature scaling
+* Feature engineering
+
+---
+
+# Technologies
+
+Current technologies:
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Git
+* GitHub
+* Jupyter Notebook
+
+Future technologies:
+
+* Scikit-Learn
+* FastAPI
+* SQLite
+* Docker
+* PyTorch
+
+---
+
+# Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/<your-username>/DataLab-AI.git
+
 cd DataLab-AI
+
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-```bash
-python src/main.py data/your_file.csv
+# Project Structure
+
+```text
+DataLab-AI/
+│
+├── data/
+│
+├── docs/
+│
+├── src/
+│   ├── loader.py
+│   ├── analysis.py
+│   ├── visualization.py
+│   ├── preprocessing/
+│   │   ├── cleaning.py
+│   │   ├── encoding.py
+│   │   ├── scaling.py
+│   │   └── feature_engineering.py
+│   ├── utils.py
+│   └── main.py
+│
+├── tests/
+│
+├── requirements.txt
+│
+└── README.md
 ```
 
-This prints a summary report to the terminal and saves plots to `outputs/`.
+---
 
-## Project structure
-data-mining-dataset-explorer/
-├── data/           # input datasets (not committed)
-├── docs/           # planning docs, notes
-├── outputs/        # generated plots (not committed)
-├── src/
-│   ├── loader.py         # dataset loading
-│   ├── analysis.py       # statistics and dataset checks
-│   ├── visualization.py  # DatasetVisualizer class
-│   ├── cleaning.py       # data cleaning (in progress)
-│   ├── utils.py           # shared helpers
-│   └── main.py             # entry point
-├── tests/          # unit tests
-└── requirements.txt
-## Roadmap
+# Project Roadmap
 
-- [x] v1 — Loading and dataset analysis
-- [x] v2 — Visualization
-- [ ] v3 — Automatic data cleaning
-- [ ] v4 — Feature engineering
-- [ ] v5 — Machine learning
-- [ ] v6 — Automatic report generation (PDF/HTML)
-- [ ] v7 — Web interface (FastAPI)
-- [ ] v8 — Deployment
-- [ ] v9 — AI-assisted insights
+## ✅ Version 1 — Dataset Loading & Analysis
 
-## Status
+* Dataset loading
+* Dataset inspection
+* Summary statistics
+* Missing values
+* Duplicate values
+* Correlation analysis
 
-This is an ongoing project, built and documented incrementally as part of
-my AI Engineering coursework at ENSIA.
+---
+
+## ✅ Version 2 — Visualization
+
+* Histograms
+* Scatter plots
+* Box plots
+* Heatmaps
+* Pie charts
+* Distribution plots
+
+---
+
+## 🚧 Version 3 — Data Preprocessing
+
+### Cleaning
+
+* Remove duplicates
+* Handle empty rows
+* Handle empty columns
+* String cleaning
+
+### Encoding
+
+* Label Encoding
+* One-Hot Encoding
+* Ordinal Encoding
+* Frequency Encoding
+
+### Scaling
+
+* Min-Max Normalization
+* Z-Score Standardization
+
+---
+
+## ⏳ Version 4 — Feature Engineering
+
+* Feature creation
+* Feature transformation
+* Binning
+* Dimensionality reduction
+
+---
+
+## ⏳ Version 5 — Machine Learning
+
+* Classification
+* Regression
+* Clustering
+* Model comparison
+* Performance evaluation
+
+---
+
+## ⏳ Version 6 — Automatic Report Generation
+
+* PDF reports
+* HTML reports
+* Dataset summaries
+
+---
+
+## ⏳ Version 7 — Web Interface
+
+* FastAPI backend
+* Dataset upload
+* Interactive dashboard
+
+---
+
+## ⏳ Version 8 — Deployment
+
+* Docker
+* Cloud deployment
+
+---
+
+## ⏳ Version 9 — AI Assistant
+
+The final goal of DataLab-AI is an intelligent assistant capable of:
+
+* Explaining dataset statistics
+* Recommending preprocessing techniques
+* Selecting suitable encoding methods
+* Suggesting feature scaling strategies
+* Recommending machine learning algorithms
+* Automatically generating insights from datasets
+
+---
+
+# Engineering Principles
+
+DataLab-AI is built following professional software engineering practices.
+
+* Modular architecture
+* Small, focused modules
+* One responsibility per function
+* One responsibility per class
+* Type hints
+* Clear documentation
+* Readable code
+* Feature-based Git commits
+* Maintainable project structure
+
+---
+
+# Future Vision
+
+The long-term objective is to transform DataLab-AI into a complete intelligent data exploration platform that guides users from raw datasets to machine learning-ready data through automation and AI-assisted decision making.
+
+---
+
+# License
+
+This project is intended for educational and portfolio purposes. A license will be added as the project matures.
